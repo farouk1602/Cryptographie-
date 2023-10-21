@@ -309,12 +309,14 @@ body .container .home a:hover {
   margin-top: 10px;
   padding: 1rem;
   border-radius: 10px;
+  border: 2px solid black;
   transition: 0.5s;
 }
 
 .part3 .generate-password .app .pass-box:hover {
   background-color: #00f8d5;
-  transform: scale(1.06);
+  transform: scale(1.03);
+  border: 2px solid white;
 }
 
 .part3 .generate-password .app .pass-box h3 {
@@ -340,6 +342,12 @@ body .container .home a:hover {
   color: white;
   text-transform: capitalize;
   border: 2px solid white;
+  transition: .5s;
+}
+
+.part3 .generate-password .app .pass-box button:hover {
+  cursor: pointer;
+  background-color: #4462c6;
 }
 
 .part3 .input-password {
@@ -352,12 +360,14 @@ body .container .home a:hover {
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
+  border: 2px solid black;
   transition: 0.5s;
 }
 
 .part3 .input-password:hover {
   background-color: #00f8d5;
-  transform: scale(1.06);
+  transform: scale(1.03);
+  border: 2px solid white;
 }
 
 .part3 .input-password h3 {
@@ -377,12 +387,19 @@ body .container .home a:hover {
 
 .part3 .input-password button {
   padding: 10px;
-  margin: 1rem 0;
+  margin: 1rem 2px;
   border-radius: 10px;
   background-color: #EB1D1D;
   color: white;
   text-transform: capitalize;
   border: 2px solid white;
+  transition: .5s;
+}
+
+.part3 .input-password button:hover {
+  transform: scale(1.05);
+  background-color: #d01a1a ;
+  cursor: pointer;
 }
 
 .hidden {
