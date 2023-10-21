@@ -100,13 +100,27 @@
           </div>
         </div>
       </div>
+
       <div class="input-password">
         <div class="box">
           <h3>entrer le mot de passe</h3>
-          <input type="password" placeholder="password" />
+          <input type="password"  id="passwordInput" placeholder="password" />
+          <button onclick="startBruteForceAttack()">Démarrer l'attaque 01</button>
+          <button onclick="startBruteForceAttackDigits()">Démarrer l'attaque 09</button>
         </div>
       </div>
-      <div class="attack-password"></div>
+
+      <div class="attack">
+        <div class="premier">
+          <div class="forcebrute-attack">
+            <h2>Résultat de l'attaque force brute:</h2>
+            <p>Mot de passe trouvé : <span id="foundPassword"></span></p>
+            <p>Temps écoulé : <span id="elapsedTime"></span> secondes</p>
+          </div>   
+        </div>
+        
+      </div>
+      
     </div>
 
     <script src="/js/part3/part3-motdepasse-allchar.js"></script>
