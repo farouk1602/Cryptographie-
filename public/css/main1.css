@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body .container {
+  background: url(/pics/5190580.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  background-size: cover;
+}
+
+body .container h1 {
+  font-family: "Kanit", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+body .container h1 span {
+  color: #e9e640;
+}
+
+body .container .home a {
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 200px;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  font-size: 1rem;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+
+body .container .home a:hover {
+  background-color: transparent;
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.108);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 2px solid black;
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 1rem;
+}
+
+.container .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  margin: 0 auto;
+  height: 10vh;
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+.container .nav-bar .items {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  list-style: none;
+}
+
+.container .nav-bar .items .item {
+  margin: 0 2rem;
+}
+
+.container .nav-bar .items .item a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  text-transform: capitalize;
+  border-bottom: 4px solid transparent;
+  padding-bottom: 5px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+.container .nav-bar .items .item a:hover {
+  color: black;
+  border-bottom: 4px solid black;
+}
+
+.container .home {
+  height: 90vh;
+}
+
+/*parts*/
+
+.part2 {
+  height: 100vh;
+  color: white;
+  background: url(/pics/Premium\ Photo\ _\ Abstract\ colorful\ blurred\ gradient\ background_\ modern\ wallpaper\ for\ cover\,\ poster\ and\ banner_.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.part2 .crpt {
+  display: flex;
+  max-width: 250px;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 2rem;
+  margin-bottom: 6rem;
+  text-transform: capitalize;
+}
+
+.part2 .crpt select {
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  background-color: #00196b;
+  color: white;
+  border: 3px solid white;
+  -webkit-appearance: none; /* Pour les navigateurs basés sur WebKit (comme Safari) */
+  -moz-appearance: none; /* Pour les navigateurs basés sur Gecko (comme Firefox) */
+  appearance: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  max-width: 200px;
+  margin: auto;
+}
+
+.part2 .crpt h2 {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #00f8d5;
+}
+
+.part2 .crpt select option {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.part2 .crpt select .titre {
+  background-color: #00196b;
+  color: white;
+}
+
+.part2 .crpt {
+  padding-bottom: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 30px;
+}
+.part2 .crpt h2 {
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+.part2 .crpt h3 {
+  color: #00196b;
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.part2 .crpt .box {
+  display: flex;
+  flex-direction: column;
+}
+
+.part2 .crpt .box textarea {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.088);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.46);
+  padding: 1rem;
+  margin: auto;
+  color: #00196b;
+  font-size: 20px;
+  max-width: 500px;
+  transition: 0.5s;
+}
+
+.part2 .crpt .box textarea:hover {
+  border-radius: 10px;
+  transform: scale(1.02);
+  border: 2px solid black;
+  backdrop-filter: blur(5px);
+}
+
+.part2 .crpt .entrer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.part2 .crpt .entrer-info label {
+  margin-right: 1rem;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: #00196b;
+}
+
+.part2 .crpt .entrer-info input {
+  margin-right: 1rem;
+  max-width: 100px;
+  padding: 10px 1rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  color: #00196b;
+  transition: 0.5s;
+}
+.part2 .crpt .entrer-info input:hover {
+  border: 2px solid white;
+}
+
+.part2 .crpt .entrer-info button {
+  background-color: #00196b;
+  margin-right: 1rem;
+  border-radius: 10px;
+  padding: 10px 1rem;
+  font-size: 1.25rem;
+  border: 2px solid white;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.part2 .crpt .entrer-info button:hover {
+  border: 2px solid #00f8d5;
+  background-color: white;
+  border-radius: 15px;
+  color: #00f8d5;
+  cursor: pointer;
+}
+
+.part2 .crpt .result {
+  display: flex;
+  justify-content: center;
+}
+.part2 .crpt .result .box {
+  flex-direction: column;
+}
+.part2 .crpt .result .box h3 {
+  margin: auto;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.part3 {
+  height: 100vh;
+  background-color: #4462c6;
+}
+
+.part3 .generate-password .titre {
+  color: #4462c6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.part3 .generate-password .app {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.part3 .generate-password .app .pass-box {
+  display: flex;
+  flex-direction: column;
+  color: #4462c6;
+  background-color: #fafbff;
+  margin-top: 10px;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.part3 .generate-password .app .pass-box:hover {
+  background-color: #00f8d5;
+  transform: scale(1.06);
+}
+
+.part3 .generate-password .app .pass-box h3 {
+  color: #4462c6;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.part3 .generate-password .app .pass-box input {
+  padding: 10px;
+  margin: 1rem 0;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: #4462c6;
+  border: 2px solid #4462c6;
+}
+
+.part3 .generate-password .app .pass-box button {
+  padding: 10px;
+  margin: 1rem 0;
+  border-radius: 10px;
+  background-color: #1aacff;
+  color: white;
+  text-transform: capitalize;
+  border: 2px solid white;
+}
+
+.part3 .input-password {
+  background-color: #fafbff;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 400px;
+  margin-top: 20px;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.part3 .input-password:hover {
+  background-color: #00f8d5;
+  transform: scale(1.06);
+}
+
+.part3 .input-password h3 {
+  color: #4462c6;
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.part3 .input-password input {
+  padding: 10px;
+  margin: 1rem 0;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: #4462c6;
+  border: 2px solid #4462c6;
+}
+
+.hidden {
+  display: none;
+  width: 0;
+  height: 0;
+}

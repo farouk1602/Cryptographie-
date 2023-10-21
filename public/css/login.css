@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background: url(/pics/5190580.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  background-size: cover;
+
+}
+
+.box {
+  position: absolute;
+  width: 430px;
+  height: 520px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.box .circle {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+}
+
+.circle:nth-child(1) {
+  background-image: linear-gradient(-225deg, #d5dfff30  0%,  #cde8f93a  29%, #e9d9f2 67%, #e4f0e2 100%);
+  left: -10px;
+  top: -20px;
+}
+
+.circle:nth-child(2) {
+  
+  background-image: linear-gradient(-225deg, #d5dfff30  0%,  #cde8f93a  29%, #e9d9f2 67%, #e4f0e2 100%);
+  right: -10px;
+  bottom: -20px;
+}
+
+
+
+.form-signin {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+form:hover {
+  transform: scale(1.02);
+}
+
+form {
+  position: absolute;
+  width: 400px;
+  height: 520px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  transition: .5s;
+}
+
+form * {
+  font-family: "Poppins";
+  color: #080710;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+
+
+form > h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+input {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.285);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  transition: .5s;
+}
+
+input:hover{
+  background-color: rgba(255, 255, 255, 0.548);
+  border: 1px solid black;
+  
+}
+
+input::placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #8f8f8f;
+  }
+
+
+.form-signin form a {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.form-signin form .btn {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 50px;
+  width: 100%;
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 14.5px );
+  -webkit-backdrop-filter: blur( 14.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.form-signin form .btn:hover {
+  background: rgba(255, 255, 255, 0.542);
+
+}
+
+.form-signin form .copy{
+  display: flex;
+  justify-content: center;
+  color: black; }
+
+
+
+
+

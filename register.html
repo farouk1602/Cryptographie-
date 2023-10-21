@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/bootstrap.min.js"></script>
+<meta name="theme-color" content="#712cf9"/>
+<title> Register </title>
+</head>
+
+
+<body >
+  <div class="box">
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <div class="form-signin">
+    <form action="/register" method="POST">
+      <h3>Register.</h3>
+      <label for="username">Email</label>
+      <input type="text" class="form-control top" id="username" placeholder="username" name="username"  required/>
+      <label for="password">Password</label>
+      <input type="password" class="form-control botton" placeholder="password" name="password"  required/>
+      <a href="/login">already have an account?</a>
+      <button class="btn" type="submit">Register</button>
+      <p class="copy">&copy;</p>
+    </form>
+  </div>
+</body>
+</html>
