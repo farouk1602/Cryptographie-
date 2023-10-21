@@ -11,35 +11,39 @@ function mot_de_passe_09() {
 
 
 function bruteForceAttackDigits(targetPassword) {
-  const possibleChars = '0123456789';
-  const startTime = Date.now();
+  let maxLength = 30;
+  let found = false;
 
-  function recurse(currentPassword) {
-      if (currentPassword === targetPassword) {
-          const endTime = Date.now();
-          const elapsedTime = (endTime - startTime) / 1000;
+  while (!found) {
+    const startTime = Date.now();
+    const maxNum = 10 ** maxLength;
 
-          document.getElementById('foundPassword').textContent = currentPassword;
-          document.getElementById('elapsedTime').textContent = elapsedTime;
-          return;
+    for (let i = 0; i < maxNum; i++) {
+      const candidate = i.toString();
+      if (candidate === targetPassword) {
+        const endTime = Date.now();
+        const elapsedTime = (endTime - startTime) / 1000;
+        console.log(elapsedTime);
+        document.getElementById("foundPassword").textContent = candidate;
+        document.getElementById("elapsedTime").textContent = elapsedTime;
+        return candidate;
       }
+    }
 
-      for (const char of possibleChars) {
-          recurse(currentPassword + char);
-      }
+    maxLength++;
   }
 
-  recurse('');
+  return null;
 }
 
 function startBruteForceAttackDigits() {
-  const targetPassword = document.getElementById('passwordInput').value;
+  const targetPassword = document.getElementById("passwordInput").value + "";
+  console.log(targetPassword);
 
-  if (targetPassword === '') {
-      alert('Veuillez entrer un mot de passe cible.');
-      return;
+  if (targetPassword === "") {
+    alert("entrer un mot de passe.");
+    return;
   }
 
   bruteForceAttackDigits(targetPassword);
 }
-  
