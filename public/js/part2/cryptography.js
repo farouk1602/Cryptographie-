@@ -135,6 +135,10 @@ function applyEncryption() {
   const message = document.getElementById("message").value;
 
   let result = "";
+  if (!/^[a-zA-Z]+$/.test(message)) {
+    document.getElementById("errorText").textContent = "Le message contient des caractères invalides. Utilisez uniquement des lettres de A à Z (majuscules ou minuscules).";
+    return; // Sortez de la fonction
+  }
 
   if (selectedMethod === "Cesar") {
     const key = parseInt(document.getElementById("keyA").value);
@@ -179,3 +183,5 @@ function applyDecryption() {
 
   document.getElementById("result").textContent = result;
 }
+
+
