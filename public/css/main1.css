@@ -182,6 +182,12 @@ body .container .home a:hover {
   margin-bottom: 0.5rem;
 }
 
+.part2 .crpt .error {
+  text-align: center;
+  margin-top: 1rem;
+  color: red;
+}
+
 .part2 .crpt .box {
   display: flex;
   flex-direction: column;
