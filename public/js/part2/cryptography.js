@@ -128,13 +128,6 @@ function decryptAffine(text, keyA, keyB) {
   });
   return decryptedMessage;
 }
-/* const key = document.getElementById("keyA");
-key.addEventListener("change", function () {
-  let gcd = verifyPrime(key, 26);
-  if (gcd) {
-    console.log(gcd);
-  }
-}); */
 
 function applyEncryption() {
   const selectedMethod = document.getElementById("cryptingTypes").value;
