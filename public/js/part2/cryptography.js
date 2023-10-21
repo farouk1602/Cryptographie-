@@ -129,16 +129,33 @@ function decryptAffine(text, keyA, keyB) {
   return decryptedMessage;
 }
 
+function Palindrome(word) {
+  return word === word.split("").reverse().join("");
+}
+function Mirroir(phrase) {
+  const words = phrase.split(" "); // Split the phrase into words
+  const reversedWords = [];
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (Palindrome(word)) {
+      console.log("palindrom word detected:" + word);
+    }
+    const reversedWord = word.split("").reverse().join(""); // Reverse each word
+    reversedWords.push(reversedWord);
+  }
+
+  const reversedPhrase = reversedWords.join(" "); // Recreate the reversed phrase
+
+  return reversedPhrase;
+}
+
 function applyEncryption() {
   const selectedMethod = document.getElementById("cryptingTypes").value;
   // Get the selected encryption method
   const message = document.getElementById("message").value;
 
   let result = "";
-  if (!/^[a-zA-Z]+$/.test(message)) {
-    document.getElementById("errorText").textContent = "Le message contient des caractères invalides. Utilisez uniquement des lettres de A à Z (majuscules ou minuscules).";
-    return; // Sortez de la fonction
-  }
 
   if (selectedMethod === "Cesar") {
     const key = parseInt(document.getElementById("keyA").value);
@@ -156,7 +173,7 @@ function applyEncryption() {
   } else if (selectedMethod === "Decalage") {
     result = chiffrementCesar(message, 1);
   } else if (selectedMethod === "Mirroir") {
-    // Call your Mirror encryption function here
+    result = Mirroir(message);
   }
 
   document.getElementById("result").textContent = result;
@@ -178,10 +195,9 @@ function applyDecryption() {
   } else if (selectedMethod === "Decalage") {
     result = dechiffrementCesar(message, 1);
   } else if (selectedMethod === "Mirroir") {
+    result = Mirroir(message);
     // Call your Mirror decryption function here
   }
 
   document.getElementById("result").textContent = result;
 }
-
-
