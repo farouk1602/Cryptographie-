@@ -375,8 +375,36 @@ body .container .home a:hover {
   border: 2px solid #4462c6;
 }
 
+.part3 .input-password button {
+  padding: 10px;
+  margin: 1rem 0;
+  border-radius: 10px;
+  background-color: #EB1D1D;
+  color: white;
+  text-transform: capitalize;
+  border: 2px solid white;
+}
+
 .hidden {
   display: none;
   width: 0;
   height: 0;
+}
+
+.part3 .attack .premier .forcebrute-attack{
+  background-color: #fafbff;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 400px;
+  margin-top: 20px;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.part3 .attack .premier .forcebrute-attack h2 {
+  text-transform: capitalize;
+  color: #4462c6;
 }
