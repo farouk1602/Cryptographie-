@@ -71,11 +71,74 @@ function decryptDecalage(text) {
   });
   return decryptedMessage;
 } */
+function verifyPrime(keyA, modulo) {
+  function gcd(keyA, modulo) {
+    if (modulo === 0) {
+      return keyA;
+    } else {
+      return gcd(modulo, keyA % modulo);
+    }
+  }
+  console.log(gcd(modulo, keyA % modulo));
+  return gcd(modulo, keyA % modulo) === 1;
+}
+function cryptageAffine(text, keyA, keyB) {
+  let cryptedMessage = "";
+  let newLetter;
+  Array.from(text).forEach((letter) => {
+    const code = letter.charCodeAt(0);
+    if (letter.match(/[a-z]/)) {
+      // Encryption for lowercase letters
+      newLetter = String.fromCharCode((((code - 97) * keyA + keyB) % 26) + 97);
+    } else if (letter.match(/[A-Z]/)) {
+      // Encryption for uppercase letters
+      newLetter = String.fromCharCode((((code - 65) * keyA + keyB) % 26) + 65);
+    } else {
+      newLetter = String.fromCharCode(code);
+    }
+    cryptedMessage = cryptedMessage + newLetter;
+  });
+  return cryptedMessage;
+}
+
+function decryptAffine(text, keyA, keyB) {
+  let reverse = 1;
+  while ((keyA * reverse) % 26 != 1) {
+    reverse++;
+  }
+  console.log(reverse);
+  let decryptedMessage = "";
+  let newLetter;
+  Array.from(text).forEach((letter) => {
+    const code = letter.charCodeAt(0);
+    if (letter.match(/[a-z]/)) {
+      // Encryption for lowercase letters
+      newLetter = String.fromCharCode(
+        (((code - 97 - keyB) * reverse) % 26) + 97
+      );
+    } else if (letter.match(/[A-Z]/)) {
+      // Encryption for uppercase letters
+      newLetter = String.fromCharCode(
+        (((code - 65 - keyB) * reverse) % 26) + 65
+      );
+    } else {
+      newLetter = String.fromCharCode(code);
+    }
+    decryptedMessage = decryptedMessage + newLetter;
+  });
+  return decryptedMessage;
+}
+/* const key = document.getElementById("keyA");
+key.addEventListener("change", function () {
+  let gcd = verifyPrime(key, 26);
+  if (gcd) {
+    console.log(gcd);
+  }
+}); */
 
 function applyEncryption() {
   const selectedMethod = document.getElementById("cryptingTypes").value;
   // Get the selected encryption method
-  console.log(selectedMethod);
   const message = document.getElementById("message").value;
 
   let result = "";
@@ -86,6 +149,13 @@ function applyEncryption() {
   } else if (selectedMethod === "Affine") {
     const key = parseInt(document.getElementById("keyA").value);
     const keyB = parseInt(document.getElementById("keyB").value);
+    let gcd = verifyPrime(key, 26);
+    if (gcd) {
+      result = cryptageAffine(message, key, keyB);
+      document.getElementById("errorText").innerHTML = "";
+    } else {
+      document.getElementById("errorText").innerHTML = "A And Modulo Not Prime";
+    }
   } else if (selectedMethod === "Decalage") {
     result = chiffrementCesar(message, 1);
   } else if (selectedMethod === "Mirroir") {
@@ -107,7 +177,7 @@ function applyDecryption() {
   } else if (selectedMethod === "Affine") {
     const key = parseInt(document.getElementById("keyA").value);
     const keyB = parseInt(document.getElementById("keyB").value);
-    // Call your Affine decryption function here
+    result = decryptAffine(message, key, keyB);
   } else if (selectedMethod === "Decalage") {
     result = dechiffrementCesar(message, 1);
   } else if (selectedMethod === "Mirroir") {
