@@ -17,45 +17,48 @@
         </ul>
       </nav>
       <h1>
-        boite d’outils de cryptographie classique <br /><span>et</span
-        ><br />attaques
+        Boite d’outils de cryptographie classique <br /><span>et</span><br />attaques
       </h1>
       <div class="home">
-        <a href="#">telecharger le rapport</a>
+        <a href="#">Télécharger le rapport</a>
       </div>
     </div>
-    <!--NAVBAR-->
+    <!-- NAVBAR -->
 
     <div class="part2">
       <div class="crpt">
         <select name="cryptage" id="cryptingTypes">
-          <option value="">type de cryptage</option>
-          <option value="Mirroir">mirroir</option>
-          <option value="Affine">affine</option>
-          <option value="Decalage">decalage</option>
-          <option value="Cesar">cesar</option>
+          <option value="">Type de cryptage</option>
+          <option value="Mirroir">Miroir</option>
+          <option value="Affine">Affine</option>
+          <option value="Decalage">Décalage</option>
+          <option value="Cesar">César</option>
         </select>
         <h2 id="cryptingType"></h2>
+        <div class="import">
+          <label for="fileInput">Importez un fichier texte :</label>
+          <input type="file" id="fileInput" style="display: none">
+          <button id="fileButton">Sélectionner un fichier</button>
+
+        </div>
         <div class="box">
-          <h3>texte originale</h3>
+          <h3>Texte original</h3>
           <textarea id="message" rows="4" cols="50"></textarea>
         </div>
-        <div id="errorText" class="error"></div> 
+        <div id="errorText" class="hidden"> </div>
         <div class="entrer-info">
-          <label for="shift" id="keyALabel" class="hidden">Key</label>
+          <label for="keyA" id="keyALabel" class="hidden">Key A</label>
           <input type="number" id="keyA" class="hidden" min="1" />
-          <label for="shift" id="keyBLabel" class="hidden">Key</label>
+          <label for="keyB" id="keyBLabel" class="hidden">Key B</label>
           <input type="number" id="keyB" class="hidden" min="1" />
-          <button class="crypt" id="crypt" onclick="applyEncryption()">
-            Crypter
-          </button>
-          <button class="decrypt" id="decrypt" onclick="applyDecryption()">
-            Decrypter
-          </button>
+          <button class="crypt" id="crypt" onclick="applyEncryption()">Crypter</button>
+          <button class="decrypt" id="decrypt" onclick="applyDecryption()">Décrypter</button>
         </div>
+        
+
         <div class="result">
           <div class="box">
-            <h3>Resultat</h3>
+            <h3>Résultat</h3>
             <textarea id="result" rows="4" cols="50"></textarea>
           </div>
         </div>
@@ -65,48 +68,49 @@
     <div class="part3">
       <div class="generate-password">
         <div class="titre">
-          <h3>partie 3</h3>
+          <h3>Partie 3</h3>
         </div>
         <div class="app">
           <div class="pass-box">
-            <h3>generate password 01</h3>
+            <h3>Generate Password 01</h3>
             <input
               type="text"
-              placeholder="create pass"
+              placeholder="Créer un mot de passe"
               id="mot_de_Passe01"
               readonly
             />
-            <button id="btn" onclick="mot_de_passe_01()">generate</button>
+            <button id="btn1" onclick="mot_de_passe_01()">Générer</button>
           </div>
           <div class="pass-box">
-            <h3>generate password 09</h3>
+            <h3>Generate Password 09</h3>
             <input
               type="text"
-              placeholder="create pass"
+              placeholder="Créer un mot de passe"
               id="mot_de_Passe09"
               readonly
             />
-            <button id="btn" onclick="mot_de_passe_09()">generate</button>
+            <button id="btn2" onclick="mot_de_passe_09()">Générer</button>
           </div>
           <div class="pass-box">
-            <h3>generate password all</h3>
+            <h3>Generate Password All</h3>
             <input
               type="text"
-              placeholder="create pass"
+              placeholder="Créer un mot de passe"
               id="mot_de_Passeall"
               readonly
             />
-            <button id="btn" onclick="mot_de_passe_all()">generate</button>
+            <button id="btn3" onclick="mot_de_passe_all()">Générer</button>
           </div>
         </div>
       </div>
 
       <div class="input-password">
         <div class="box">
-          <h3>entrer le mot de passe</h3>
-          <input type="password"  id="passwordInput" placeholder="password" />
+          <h3>Entrer le mot de passe</h3>
+          <input type="password" id="passwordInput" placeholder="Mot de passe" />
           <div class="btn">
-            <button onclick="startBruteForceAttackAll()">Démarrer l'attaque</button>
+            <button onclick="startBruteForceAttackAll()">Attaque brute force</button>
+            <button>Attaque par dictionnaire</button>
           </div>
         </div>
       </div>
@@ -114,15 +118,14 @@
       <div class="attack">
         <div class="premier">
           <div class="forcebrute-attack">
-            <h2>Résultat de l'attaque force brute:</h2>
+            <h2>Résultat de l'attaque force brute :</h2>
             <p>Mot de passe : <span id="foundPassword"></span></p>
             <p>Temps : <span id="elapsedTime"></span> s</p>
-          </div>   
+          </div>
         </div>
-        
       </div>
-      
     </div>
+
 
     <script src="/js/part3/part3-motdepasse-allchar.js"></script>
     <script src="/js/part3/part3-motdepasse[01].js"></script>
