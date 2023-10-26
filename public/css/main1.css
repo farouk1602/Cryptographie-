@@ -267,6 +267,34 @@ body .container .home a:hover {
   cursor: pointer;
 }
 
+.part2 .crpt .import {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00196b;
+  margin: 10px;
+}
+
+.part2 .crpt .import #fileButton{
+  background-color: #00f8d5;
+  margin-right: 1rem;
+  border-radius: 10px;
+  padding: 10px 1rem;
+  border: 2px solid #00196b;
+  color: #00196b;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+
+
+.part2 .crpt .import #fileButton:hover {
+  border: 2px solid #00196b;
+  background-color: #00196b ;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
 .part2 .crpt .result {
   display: flex;
   justify-content: center;
@@ -314,9 +342,7 @@ body .container .home a:hover {
 }
 
 .part3 .generate-password .app .pass-box:hover {
-  background-color: #00f8d5;
-  transform: scale(1.03);
-  border: 2px solid white;
+  transform: scale(1.02);
 }
 
 .part3 .generate-password .app .pass-box h3 {
@@ -351,7 +377,7 @@ body .container .home a:hover {
 }
 
 .part3 .input-password {
-  background-color: #fafbff;
+  background-color: #00f8d5;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -365,9 +391,7 @@ body .container .home a:hover {
 }
 
 .part3 .input-password:hover {
-  background-color: #00f8d5;
-  transform: scale(1.03);
-  border: 2px solid white;
+  transform: scale(1.02);
 }
 
 .part3 .input-password h3 {
@@ -425,3 +449,20 @@ body .container .home a:hover {
   text-transform: capitalize;
   color: #4462c6;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
