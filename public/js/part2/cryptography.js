@@ -46,20 +46,53 @@ function dechiffrementCesar(message, key) {
   return resultat;
 }
 
-/* function cryptageDecalage(text) {
-  let cryptedMessage = "";
-  Array.from(text).forEach((letter) => {
-    let newValue = letter.charCodeAt(0) + 1;
-    if (newValue === 123 || newValue === 91) {
-      newValue = newValue - 26;
-    }
-    let newLetter = String.fromCharCode(newValue);
-    cryptedMessage = cryptedMessage + newLetter;
-  });
-  return cryptedMessage;
-}
 
-function decryptDecalage(text) {
+
+document.getElementById("fileButton").addEventListener("click", function () {
+  document.getElementById("fileInput").click();
+});
+
+document.getElementById("fileInput").addEventListener("change", function () {
+  const fileInput = this;
+  const textarea = document.getElementById("message");
+
+  if (fileInput.files.length > 0) {
+    const selectedFile = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      textarea.value = e.target.result;
+    };
+
+    reader.readAsText(selectedFile);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+function cryptageDecalage(text) {
+  const words = text.split(" ");
+  console.log(words)
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    const newword = word.split("") // Reverse each word
+    console.log(newword.length)
+    console.log(newword)
+  }
+  return words;
+}
+cryptageDecalage("qbc dwe")
+
+/* function decryptDecalage(text) {
   let decryptedMessage = "";
   Array.from(text).forEach((letter) => {
     let newValue = letter.charCodeAt(0) - 1;
@@ -70,7 +103,13 @@ function decryptDecalage(text) {
     decryptedMessage = decryptedMessage + newLetter;
   });
   return decryptedMessage;
-} */
+}  */
+
+
+
+
+
+
 function verifyPrime(keyA, modulo) {
   function gcd(keyA, modulo) {
     if (modulo === 0) {
@@ -201,3 +240,6 @@ function applyDecryption() {
 
   document.getElementById("result").textContent = result;
 }
+
+
+
