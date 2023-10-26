@@ -1,4 +1,3 @@
-
 function mot_de_passe_all() {
     var mot_de_Passe = "";
     var val_possible = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+!-=[]{}|;:',./<>?"; 

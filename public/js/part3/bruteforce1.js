@@ -1,28 +1,46 @@
-let alpa = []
+function generate(length) {
+    let motdepasse = "";
+    const charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+!-=[]{}|;:',./<>?";
+  
+    for (let i = 0; i < length; i++) {
+      const index = Math.floor(Math.random() * charset.length);
+      motdepasse += charset.charAt(index);
+    }
+    return motdepasse;
+}
 
-let test = 0
-let einstelling = 0
-let a =0
-index = 0 
-
-function run(parans) {
-    if(einstelling == 0 ) {
-        console.logalpa[test]
-        test ++
+function bruteForceAttackAll(targetPassword) {
+    let found = false;
+    let candidate;
+  
+    const sTime = Date.now();
+    const charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+!-=[]{}|;:',./<>?";
+    for (let len = 1; len <= 5; len++) {
+      while (!found) {
+        candidate = generate(len);
+        console.log(candidate) ;
+  
+        if (candidate === targetPassword) {
+          found = true;
+          const eTime = Date.now();
+          const Time = (eTime - sTime) / 1000;
+          console.log(elapsedTime);
+          document.getElementById("foundPassword").textContent = candidate;
+          document.getElementById("elapsedTime").textContent = Time;
+          return candidate;
+        }
+      }
     }
-    if (test == alpha.length ) {
-        einstelling = 1
-    }else if (einstelling ) {
-        index++
-        console.log(alpa[a] + alpa[index])
+    return candidate;
+}
+  
+function startBruteForceAttackAll() {
+    const targetPassword = document.getElementById("passwordInput").value;
+  
+    if (targetPassword === "") {
+      alert("Veuillez entrer un mot de passe.");
+      return;
     }
-    if (index == 25 ) {
-        index =-1
-        a++
-    }
-    if(a == alpa.length) {
-        clearInterval(interval)
-    }
-}   
-
-let interval = setInterval(run,10)
+    bruteForceAttackAll(targetPassword);
+}
+  
