@@ -1,3 +1,4 @@
+// cesar
 function chiffrementCesar(message, key) {
   let resultat = "";
 
@@ -48,37 +49,9 @@ function dechiffrementCesar(message, key) {
 
 
 
-document.getElementById("fileButton").addEventListener("click", function () {
-  document.getElementById("fileInput").click();
-});
-
-document.getElementById("fileInput").addEventListener("change", function () {
-  const fileInput = this;
-  const textarea = document.getElementById("message");
-
-  if (fileInput.files.length > 0) {
-    const selectedFile = fileInput.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      textarea.value = e.target.result;
-    };
-
-    reader.readAsText(selectedFile);
-  }
-});
 
 
-
-
-
-
-
-
-
-
-
-
+//decalage
 function cryptageDecalage(text) {
   const words = text.split(" ");
   console.log(words)
@@ -109,7 +82,7 @@ cryptageDecalage("qbc dwe")
 
 
 
-
+// affine
 function verifyPrime(keyA, modulo) {
   function gcd(keyA, modulo) {
     if (modulo === 0) {
@@ -168,6 +141,11 @@ function decryptAffine(text, keyA, keyB) {
   return decryptedMessage;
 }
 
+
+
+
+
+//mirroir
 function Palindrome(word) {
   return word === word.split("").reverse().join("");
 }
@@ -189,6 +167,12 @@ function Mirroir(phrase) {
   return reversedPhrase;
 }
 
+
+
+
+
+
+//apply
 function applyEncryption() {
   const selectedMethod = document.getElementById("cryptingTypes").value;
   // Get the selected encryption method
@@ -243,3 +227,45 @@ function applyDecryption() {
 
 
 
+
+//file
+document.getElementById("fileButton").addEventListener("click", function () {
+  document.getElementById("fileInput").click();
+});
+
+document.getElementById("fileInput").addEventListener("change", function () {
+  const fileInput = this;
+  const textarea = document.getElementById("message");
+
+  if (fileInput.files.length > 0) {
+    const selectedFile = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      textarea.value = e.target.result;
+    };
+
+    reader.readAsText(selectedFile);
+  }
+});
+
+
+
+
+
+//download file
+document.getElementById("downloadButton").addEventListener("click", function () {
+  const textarea = document.getElementById("result").value;
+  const blob = new Blob([textarea], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+
+  const downloadLink = document.createElement("a");
+  downloadLink.href = url;
+  downloadLink.download = "downloaded_file.txt";
+
+  // Trigger a click event on the download link to start the download
+  downloadLink.click();
+
+  // Clean up by revoking the object URL
+  URL.revokeObjectURL(url);
+});
