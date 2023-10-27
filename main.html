@@ -11,21 +11,19 @@
       <nav class="nav-bar">
         <ul class="items">
           <li class="item"><a href="#part2">cryptage</a></li>
-          <li class="item"><a href="#">Mot de passe</a></li>
-          <li class="item"><a href="#">Stéganographie</a></li>
-          <li class="item"><a href="#">Attaques</a></li>
+          <li class="item"><a href="#part3">Mot de passe</a></li>
+          <li class="item"><a href="#part3">Attaques</a></li>
+          <li class="item"><a href="#">Stéganographie </a></li>
         </ul>
       </nav>
-      <h1>
-        Boite d’outils de cryptographie classique <br /><span>et</span><br />attaques
-      </h1>
+      <h1>Boite d’outils de cryptographie classique et attaques</h1>
       <div class="home">
         <a href="#">Télécharger le rapport</a>
       </div>
     </div>
     <!-- NAVBAR -->
 
-    <div class="part2">
+    <div class="part2" id="part2">
       <div class="crpt">
         <select name="cryptage" id="cryptingTypes">
           <option value="">Type de cryptage</option>
@@ -36,7 +34,7 @@
         </select>
         <h2 id="cryptingType"></h2>
         <div class="import">
-          <label for="fileInput">Importez un fichier texte :</label>
+          <label >Importez un fichier texte :</label>
           <input type="file" id="fileInput" style="display: none">
           <button id="fileButton">Sélectionner un fichier</button>
 
@@ -68,10 +66,10 @@
       </div>
     </div>
 
-    <div class="part3">
+    <div class="part3" id="part3">
       <div class="generate-password">
         <div class="titre">
-          <h3>Partie 3</h3>
+          <h3>attacks</h3>
         </div>
         <div class="app">
           <div class="pass-box">
