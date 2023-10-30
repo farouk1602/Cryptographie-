@@ -5,9 +5,15 @@ const mongoose = require("mongoose");
 let http = require("http").Server(app);
 let io = require("socket.io")(http);
 
+
+const fs = require('fs');
+const filePath = 'public/js/passwords.txt';
+const fileContents = fs.readFileSync(filePath, 'utf-8');
+const linesArray = fileContents.split('\n');
+
 io.on("connection", function (socket) {
   console.log("User connected with socket ID:", socket.id);
-  socket.emit("data", "hna dir data ta3k");
+  socket.emit("data", linesArray);
 });
 app.use(express.static("public"));
 app.use(
