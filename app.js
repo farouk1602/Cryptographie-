@@ -2,7 +2,13 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+let http = require("http").Server(app);
+let io = require("socket.io")(http);
 
+io.on("connection", function (socket) {
+  console.log("User connected with socket ID:", socket.id);
+  socket.emit("data", "hna dir data ta3k");
+});
 app.use(express.static("public"));
 app.use(
   bodyParser.urlencoded({
@@ -73,7 +79,7 @@ app.post("/login", function (req, res) {
   login(userName, password);
 });
 
-app.listen(process.env.PORT || 3000, function () {
+http.listen(process.env.PORT || 3000, function () {
   console.log("server is running on port 3000");
 });
 
