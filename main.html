@@ -34,25 +34,27 @@
         </select>
         <h2 id="cryptingType"></h2>
         <div class="import">
-          <label >Importez un fichier texte :</label>
-          <input type="file" id="fileInput" style="display: none">
+          <label>Importez un fichier texte :</label>
+          <input type="file" id="fileInput" style="display: none" />
           <button id="fileButton">Sélectionner un fichier</button>
-
         </div>
         <div class="box">
           <h3>Texte original</h3>
           <textarea id="message" rows="4" cols="50"></textarea>
         </div>
-        <div id="errorText" class="hidden"> </div>
+        <div id="errorText" class="hidden"></div>
         <div class="entrer-info">
           <label for="keyA" id="keyALabel" class="hidden">Key A</label>
           <input type="number" id="keyA" class="hidden" min="1" />
           <label for="keyB" id="keyBLabel" class="hidden">Key B</label>
           <input type="number" id="keyB" class="hidden" min="1" />
-          <button class="crypt" id="crypt" onclick="applyEncryption()">Crypter</button>
-          <button class="decrypt" id="decrypt" onclick="applyDecryption()">Décrypter</button>
+          <button class="crypt" id="crypt" onclick="applyEncryption()">
+            Crypter
+          </button>
+          <button class="decrypt" id="decrypt" onclick="applyDecryption()">
+            Décrypter
+          </button>
         </div>
-        
 
         <div class="result">
           <div class="box">
@@ -108,9 +110,15 @@
       <div class="input-password">
         <div class="box">
           <h3>Entrer le mot de passe</h3>
-          <input type="password" id="passwordInput" placeholder="Mot de passe" />
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Mot de passe"
+          />
           <div class="btn">
-            <button onclick="startBruteForceAttackAll()">Attaque brute force</button>
+            <button onclick="startBruteForceAttackAll()">
+              Attaque brute force
+            </button>
             <button>Attaque par dictionnaire</button>
           </div>
         </div>
@@ -127,7 +135,8 @@
       </div>
     </div>
 
-
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/part3/dictionnary.js"></script>
     <script src="/js/part3/part3-motdepasse-allchar.js"></script>
     <script src="/js/part3/part3-motdepasse[01].js"></script>
     <script src="/js/part3/part3-motdepasse[0..9].js"></script>
