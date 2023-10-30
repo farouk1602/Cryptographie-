@@ -76,3 +76,31 @@ app.post("/login", function (req, res) {
 app.listen(process.env.PORT || 3000, function () {
   console.log("server is running on port 3000");
 });
+
+
+
+
+
+// app.post('/diction' , function (req, res) {
+//   console.log(req.body)
+  
+
+// });
+
+
+
+
+
+
+
+
+
+// const fs = require('fs');
+
+// // Specify the file path
+// const filePath = 'public/js/password.txt';
+
+// // Read the file contents as a string
+// const fileContents = fs.readFileSync(filePath, 'utf-8');
+
+// const linesArray = fileContents.split('\n');

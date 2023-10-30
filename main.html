@@ -108,10 +108,14 @@
       <div class="input-password">
         <div class="box">
           <h3>Entrer le mot de passe</h3>
+          <form action="/diction" method="post">
           <input type="password" id="passwordInput" placeholder="Mot de passe" />
           <div class="btn">
             <button onclick="startBruteForceAttackAll()">Attaque brute force</button>
-            <button>Attaque par dictionnaire</button>
+          
+              <!-- <button name="dict" value="dict">Attaque par dictionnaire</button> -->
+          </form>
+            <button onclick="startDictionnaryAttack()">Attaque par dictionnaire</button>
           </div>
         </div>
       </div>
@@ -132,6 +136,7 @@
     <script src="/js/part3/part3-motdepasse[01].js"></script>
     <script src="/js/part3/part3-motdepasse[0..9].js"></script>
     <script src="/js/part3/bruteforce1.js"></script>
+    <script src="/js/part3/dictionnaire.js"></script>
     <script src="/js/part2/cryptography.js"></script>
     <script type="module" src="/js/part2/fontEnd.js"></script>
   </body>
