@@ -47,23 +47,26 @@ function dechiffrementCesar(message, key) {
   return resultat;
 }
 
-
-
-
-
 //decalage
-function cryptageDecalage(text) {
-  const words = text.split(" ");
-  console.log(words)
-  for (let i = 0; i < words.length; i++) {
-    const word = words[i];
-    const newword = word.split("") // Reverse each word
-    console.log(newword.length)
-    console.log(newword)
-  }
-  return words;
+function decalageDroit(text) {
+  msgdecaler = text;
+  let letter = text[text.length - 1];
+  msgdecaler = msgdecaler.split("");
+  msgdecaler.pop();
+  msgdecaler.unshift(letter);
+  msgdecaler = msgdecaler.join("");
+
+  return msgdecaler;
 }
-cryptageDecalage("qbc dwe")
+function decalageGauche(text) {
+  msgdecaler = text;
+  let letter = text[0];
+  msgdecaler = msgdecaler.split("");
+  msgdecaler.shift();
+  msgdecaler.push(letter);
+  msgdecaler = msgdecaler.join("");
+  return msgdecaler;
+}
 
 /* function decryptDecalage(text) {
   let decryptedMessage = "";
@@ -77,10 +80,6 @@ cryptageDecalage("qbc dwe")
   });
   return decryptedMessage;
 }  */
-
-
-
-
 
 // affine
 function verifyPrime(keyA, modulo) {
@@ -141,10 +140,6 @@ function decryptAffine(text, keyA, keyB) {
   return decryptedMessage;
 }
 
-
-
-
-
 //mirroir
 function Palindrome(word) {
   return word === word.split("").reverse().join("");
@@ -167,11 +162,6 @@ function Mirroir(phrase) {
   return reversedPhrase;
 }
 
-
-
-
-
-
 //apply
 function applyEncryption() {
   const selectedMethod = document.getElementById("cryptingTypes").value;
@@ -193,8 +183,10 @@ function applyEncryption() {
     } else {
       document.getElementById("errorText").innerHTML = "A And Modulo Not Prime";
     }
-  } else if (selectedMethod === "Decalage") {
-    result = chiffrementCesar(message, 1);
+  } else if (selectedMethod === "DecalageDroit") {
+    result = decalageDroit(message);
+  } else if (selectedMethod === "DecalageGauche") {
+    result = decalageGauche(message);
   } else if (selectedMethod === "Mirroir") {
     result = Mirroir(message);
   }
@@ -215,8 +207,10 @@ function applyDecryption() {
     const key = parseInt(document.getElementById("keyA").value);
     const keyB = parseInt(document.getElementById("keyB").value);
     result = decryptAffine(message, key, keyB);
-  } else if (selectedMethod === "Decalage") {
-    result = dechiffrementCesar(message, 1);
+  } else if (selectedMethod === "DecalageDroit") {
+    result = decalageGauche(message);
+  } else if (selectedMethod === "DecalageGauche") {
+    result = decalageDroit(message);
   } else if (selectedMethod === "Mirroir") {
     result = Mirroir(message);
     // Call your Mirror decryption function here
@@ -224,9 +218,6 @@ function applyDecryption() {
 
   document.getElementById("result").textContent = result;
 }
-
-
-
 
 //file
 document.getElementById("fileButton").addEventListener("click", function () {
@@ -249,23 +240,21 @@ document.getElementById("fileInput").addEventListener("change", function () {
   }
 });
 
-
-
-
-
 //download file
-document.getElementById("downloadButton").addEventListener("click", function () {
-  const textarea = document.getElementById("result").value;
-  const blob = new Blob([textarea], { type: "text/plain" });
-  const url = URL.createObjectURL(blob);
+document
+  .getElementById("downloadButton")
+  .addEventListener("click", function () {
+    const textarea = document.getElementById("result").value;
+    const blob = new Blob([textarea], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
 
-  const downloadLink = document.createElement("a");
-  downloadLink.href = url;
-  downloadLink.download = "downloaded_file.txt";
+    const downloadLink = document.createElement("a");
+    downloadLink.href = url;
+    downloadLink.download = "downloaded_file.txt";
 
-  // Trigger a click event on the download link to start the download
-  downloadLink.click();
+    // Trigger a click event on the download link to start the download
+    downloadLink.click();
 
-  // Clean up by revoking the object URL
-  URL.revokeObjectURL(url);
-});
+    // Clean up by revoking the object URL
+    URL.revokeObjectURL(url);
+  });
