@@ -29,7 +29,8 @@
           <option value="">Type de cryptage</option>
           <option value="Mirroir">Miroir</option>
           <option value="Affine">Affine</option>
-          <option value="Decalage">Décalage</option>
+          <option value="DecalageDroit">Décalage a droit</option>
+          <option value="DecalageGauche">Décalage a gauche</option>
           <option value="Cesar">César</option>
         </select>
         <h2 id="cryptingType"></h2>
@@ -119,7 +120,9 @@
             <button onclick="startBruteForceAttackAll()">
               Attaque brute force
             </button>
-            <button onclick="startDictionnaryAttack()">Attaque par dictionnaire</button>
+            <button onclick="startDictionnaryAttack()">
+              Attaque par dictionnaire
+            </button>
           </div>
         </div>
       </div>
@@ -141,7 +144,6 @@
     <script src="/js/part3/part3-motdepasse[01].js"></script>
     <script src="/js/part3/part3-motdepasse[0..9].js"></script>
     <script src="/js/part3/bruteforce1.js"></script>
-    <script src="/js/part3/dictionnaire.js"></script>
     <script src="/js/part2/cryptography.js"></script>
     <script type="module" src="/js/part2/fontEnd.js"></script>
   </body>
