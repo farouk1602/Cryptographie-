@@ -49,22 +49,37 @@ function dechiffrementCesar(message, key) {
 
 //decalage
 function decalageDroit(text) {
-  msgdecaler = text;
-  let letter = text[text.length - 1];
-  msgdecaler = msgdecaler.split("");
-  msgdecaler.pop();
-  msgdecaler.unshift(letter);
-  msgdecaler = msgdecaler.join("");
+  msgdecaler = [];
+  words = text.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    text = words[i];
+    wordDecaler = text;
+    let letter = text[text.length - 1];
+    wordDecaler = wordDecaler.split("");
+    wordDecaler.pop();
+    wordDecaler.unshift(letter);
+    wordDecaler = wordDecaler.join("");
 
+    msgdecaler[i] = wordDecaler;
+  }
+  msgdecaler = msgdecaler.join(" ");
   return msgdecaler;
 }
 function decalageGauche(text) {
-  msgdecaler = text;
-  let letter = text[0];
-  msgdecaler = msgdecaler.split("");
-  msgdecaler.shift();
-  msgdecaler.push(letter);
-  msgdecaler = msgdecaler.join("");
+  msgdecaler = [];
+  words = text.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    text = words[i];
+    wordDecaler = text;
+    let letter = text[0];
+    wordDecaler = wordDecaler.split("");
+    wordDecaler.shift();
+    wordDecaler.push(letter);
+    wordDecaler = wordDecaler.join("");
+
+    msgdecaler[i] = wordDecaler;
+  }
+  msgdecaler = msgdecaler.join(" ");
   return msgdecaler;
 }
 
