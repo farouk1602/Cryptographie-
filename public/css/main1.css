@@ -3,6 +3,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root{
+  --color1 : #fff ;
+  --bgcolor : #1b1f24 ;
+  --bgcolor2 : #22282f ;
+  --color2 : #13bbff ;
+  --color3 : #c3cad5 ;
+  --h1-f : 4.5rem ;
+  --h2f : 3rem ;
+  --pf : 1rem ;
 }
 
 body {
@@ -343,11 +355,11 @@ body .container .home a:hover {
 
 .part3 {
   height: 100vh;
-  background-color: #fddd1d;
+  background-color: var(--bgcolor);
 }
 
 .part3 .generate-password .titre {
-  color: #4462c6;
+  color: var(--color2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -368,10 +380,11 @@ body .container .home a:hover {
   flex-direction: column;
   color: #4462c6;
   background-color: #fafbff;
+  border: 2px solid var(--color2);
+  box-shadow: 0 0 20px var(--color2);
   margin-top: 10px;
   padding: 1rem;
   border-radius: 10px;
-  border: 2px solid black;
   transition: 0.5s;
 }
 
@@ -411,21 +424,20 @@ body .container .home a:hover {
 }
 
 .part3 .input-password {
-  background-color: #1aacff;
   display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 400px;
-  margin-top: 20px;
+  justify-content: space-between;
   padding: 1rem;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
   text-align: center;
-  border-radius: 10px;
-  border: 2px solid black;
-  transition: 0.5s;
 }
-
-.part3 .input-password:hover {
-  transform: scale(1.02);
+.part3 .input-password .box {
+  background-color: var(--bgcolor);
+  border: 2px solid var(--color2);
+  box-shadow: 0 0 20px var(--color2);
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .part3 .input-password h3 {
@@ -476,6 +488,8 @@ body .container .home a:hover {
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
+  border: 2px solid var(--color2);
+  box-shadow: 0 0 10px var(--color2);
   transition: 0.5s;
 }
 
