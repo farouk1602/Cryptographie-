@@ -112,7 +112,7 @@ function verifyPrime(keyA, modulo) {
   return gcd(modulo, keyA % modulo) === 1;
 }
 function cryptageAffine(text, keyA, keyB) {
-  if (keyA == 0) {
+  if (keyA == 1) {
     alert("weak key!!");
   } else {
     let cryptedMessage = "";
