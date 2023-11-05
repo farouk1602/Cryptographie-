@@ -10,9 +10,8 @@
     <div class="container">
       <nav class="nav-bar">
         <ul class="items">
-          <li class="item"><a href="#part2">cryptage</a></li>
-          <li class="item"><a href="#part3">Mot de passe</a></li>
-          <li class="item"><a href="#part3">Attaques</a></li>
+          <li class="item"><a href="#part2">Cryptage/ décryptage</a></li>
+          <li class="item"><a href="#part3">Mot de passe et attacks</a></li>
           <li class="item"><a href="#">Stéganographie </a></li>
         </ul>
       </nav>
@@ -110,19 +109,29 @@
 
       <div class="input-password">
         <div class="box">
-          <h3>Entrer le mot de passe</h3>
-          <input
-            type="password"
-            id="passwordInput"
-            placeholder="Mot de passe"
-          />
+          <h3>Entrer le mot de passe 01</h3>
+          <input type="password" id="passwordInput1" placeholder="Mot de passe"/>
           <div class="btn">
-            <button onclick="startBruteForceAttackAll()">
-              Attaque brute force
-            </button>
-            <button onclick="startDictionnaryAttack()">
-              Attaque par dictionnaire
-            </button>
+            <button onclick="startBruteForceAttack01()">Attaque brute force</button>
+            <button onclick="startDictionnaryAttack()">Attaque par dictionnaire </button>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Entrer le mot de passe 09</h3>
+          <input type="password" id="passwordInput2" placeholder="Mot de passe"/>
+          <div class="btn">
+            <button onclick="startBruteForceAttack09()">Attaque brute force</button>
+            <button onclick="startDictionnaryAttack()">Attaque par dictionnaire</button>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Entrer le mot de passe all</h3>
+          <input type="password" id="passwordInput3" placeholder="Mot de passe"/>
+          <div class="btn">
+            <button onclick="startBruteForceAttackAll()">Attaque brute force</button>
+            <button onclick="startDictionnaryAttack()">Attaque par dictionnaire</button>
           </div>
         </div>
       </div>
@@ -130,7 +139,7 @@
       <div class="attack">
         <div class="premier">
           <div class="forcebrute-attack">
-            <h2>Résultat de l'attaque force brute :</h2>
+            <h2>Résultat de l'attaque:</h2>
             <p>Mot de passe : <span id="foundPassword"></span></p>
             <p>Temps : <span id="elapsedTime"></span> s</p>
           </div>
@@ -144,6 +153,8 @@
     <script src="/js/part3/part3-motdepasse[01].js"></script>
     <script src="/js/part3/part3-motdepasse[0..9].js"></script>
     <script src="/js/part3/bruteforce1.js"></script>
+    <script src="/js/part3/bruteforce2.js"></script>
+    <script src="/js/part3/bruteforce3.js"></script>
     <script src="/js/part2/cryptography.js"></script>
     <script type="module" src="/js/part2/fontEnd.js"></script>
   </body>
