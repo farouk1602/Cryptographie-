@@ -1,4 +1,4 @@
-// cesar
+// Cesar
 function chiffrementCesar(message, key) {
   let resultat = "";
   if (key % 26 == 0 || key == 1 || key % 13 == 0) {
