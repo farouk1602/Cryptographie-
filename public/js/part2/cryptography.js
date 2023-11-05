@@ -281,3 +281,17 @@ document
     // Clean up by revoking the object URL
     URL.revokeObjectURL(url);
   });
+
+
+const correctPassword = "j8$7Kl9oP2#dFgH@3lAsQ1rT5xY6^bNhGm9*pLo0iJ2nBvF8cV4k3#7e3%zX1&oR7qW1@uE4yR6tI9wS3^mCcD5fG8hJkL2nM4bV6c8xZ9@oP2kL3iN5mB7vF5gH2jK4lA6sD8fG0hJ9&j8$7Kl9oP2#dFgH@3lAsQ1rT5xY6^bNhGm9*pLo0iJ2nBvF8cV4k3#7e3%zX1&oR7qW1@uE4yR6tI9wS3^mCcD5fG8hJkL2nM4bV6c8xZ9@oP2kL3iN5mB7vF5gH2jK4lA6sD8fG0hJ9&"
+;
+
+function checkPassword() {
+    const enteredPassword = document.getElementById("passwordinput").value;
+    if (enteredPassword === correctPassword) {
+        document.getElementById("decrypt").removeAttribute("disabled");
+        document.getElementById("crypt").removeAttribute("disabled");
+    } else {
+        alert("Incorrect password. Access denied.");
+    }
+}
