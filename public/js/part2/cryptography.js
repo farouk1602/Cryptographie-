@@ -1,26 +1,29 @@
 // cesar
 function chiffrementCesar(message, key) {
   let resultat = "";
-
-  for (let i = 0; i < message.length; i++) {
-    let caractere = message[i];
-    if (caractere.match(/[a-zA-Z]/)) {
-      const code = message.charCodeAt(i);
-      let lettreDecalee;
-      if (caractere.match(/[a-z]/)) {
-        // Encryption for lowercase letters
-        lettreDecalee = String.fromCharCode(((code - 97 + key) % 26) + 97);
+  if (key % 26 == 0 || key == 1 || key % 13 == 0) {
+    alert("Weak Key!!");
+  } else {
+    for (let i = 0; i < message.length; i++) {
+      let caractere = message[i];
+      if (caractere.match(/[a-zA-Z]/)) {
+        const code = message.charCodeAt(i);
+        let lettreDecalee;
+        if (caractere.match(/[a-z]/)) {
+          // Encryption for lowercase letters
+          lettreDecalee = String.fromCharCode(((code - 97 + key) % 26) + 97);
+        } else {
+          // Encryption for uppercase letters
+          lettreDecalee = String.fromCharCode(((code - 65 + key) % 26) + 65);
+        }
+        resultat += lettreDecalee;
       } else {
-        // Encryption for uppercase letters
-        lettreDecalee = String.fromCharCode(((code - 65 + key) % 26) + 65);
+        resultat += caractere;
       }
-      resultat += lettreDecalee;
-    } else {
-      resultat += caractere;
     }
-  }
 
-  return resultat;
+    return resultat;
+  }
 }
 
 function dechiffrementCesar(message, key) {
@@ -109,22 +112,30 @@ function verifyPrime(keyA, modulo) {
   return gcd(modulo, keyA % modulo) === 1;
 }
 function cryptageAffine(text, keyA, keyB) {
-  let cryptedMessage = "";
-  let newLetter;
-  Array.from(text).forEach((letter) => {
-    const code = letter.charCodeAt(0);
-    if (letter.match(/[a-z]/)) {
-      // Encryption for lowercase letters
-      newLetter = String.fromCharCode((((code - 97) * keyA + keyB) % 26) + 97);
-    } else if (letter.match(/[A-Z]/)) {
-      // Encryption for uppercase letters
-      newLetter = String.fromCharCode((((code - 65) * keyA + keyB) % 26) + 65);
-    } else {
-      newLetter = String.fromCharCode(code);
-    }
-    cryptedMessage = cryptedMessage + newLetter;
-  });
-  return cryptedMessage;
+  if (keyA == 0) {
+    alert("weak key!!");
+  } else {
+    let cryptedMessage = "";
+    let newLetter;
+    Array.from(text).forEach((letter) => {
+      const code = letter.charCodeAt(0);
+      if (letter.match(/[a-z]/)) {
+        // Encryption for lowercase letters
+        newLetter = String.fromCharCode(
+          (((code - 97) * keyA + keyB) % 26) + 97
+        );
+      } else if (letter.match(/[A-Z]/)) {
+        // Encryption for uppercase letters
+        newLetter = String.fromCharCode(
+          (((code - 65) * keyA + keyB) % 26) + 65
+        );
+      } else {
+        newLetter = String.fromCharCode(code);
+      }
+      cryptedMessage = cryptedMessage + newLetter;
+    });
+    return cryptedMessage;
+  }
 }
 
 function decryptAffine(text, keyA, keyB) {
@@ -159,21 +170,20 @@ function decryptAffine(text, keyA, keyB) {
 function Palindrome(word) {
   return word === word.split("").reverse().join("");
 }
-function Mirroir(phrase) {
-  const words = phrase.split(" "); // Split the phrase into words
+function Mirroir(phrase, key) {
+  const words = phrase.split(" ");
   const reversedWords = [];
 
   for (let i = 0; i < words.length; i++) {
-    const word = words[i];
+    let word = words[i];
     if (Palindrome(word)) {
-      console.log("palindrom word detected:" + word);
+      word = chiffrementCesar(word, key);
     }
-    const reversedWord = word.split("").reverse().join(""); // Reverse each word
+    const reversedWord = word.split("").reverse().join("");
     reversedWords.push(reversedWord);
   }
 
-  const reversedPhrase = reversedWords.join(" "); // Recreate the reversed phrase
-
+  const reversedPhrase = reversedWords.join(" ");
   return reversedPhrase;
 }
 
@@ -194,16 +204,15 @@ function applyEncryption() {
     let gcd = verifyPrime(key, 26);
     if (gcd) {
       result = cryptageAffine(message, key, keyB);
-      document.getElementById("errorText").innerHTML = "";
     } else {
-      document.getElementById("errorText").innerHTML = "A And Modulo Not Prime";
+      alert("A And Modulo Not Prime");
     }
   } else if (selectedMethod === "DecalageDroit") {
     result = decalageDroit(message);
   } else if (selectedMethod === "DecalageGauche") {
     result = decalageGauche(message);
   } else if (selectedMethod === "Mirroir") {
-    result = Mirroir(message);
+    result = Mirroir(message, 2);
   }
 
   document.getElementById("result").textContent = result;
@@ -227,8 +236,7 @@ function applyDecryption() {
   } else if (selectedMethod === "DecalageGauche") {
     result = decalageDroit(message);
   } else if (selectedMethod === "Mirroir") {
-    result = Mirroir(message);
-    // Call your Mirror decryption function here
+    result = Mirroir(message, -2);
   }
 
   document.getElementById("result").textContent = result;
