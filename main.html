@@ -32,9 +32,14 @@
           <option value="DecalageGauche">Décalage a gauche</option>
           <option value="Cesar">César</option>
         </select>
-        <h2 id="cryptingType"></h2>
+        <h5 id="cryptingType"></h5>
+        <h4>Vous ne pouvez utiliser cette application que si vous définissez le mot de passe</h4>
+        <div class="pass">
+          <input type="password" id="passwordinput" placeholder="Enter Password">
+          <button onclick="checkPassword()">Submit</button>
+        </div>
         <div class="import">
-          <label>Importez un fichier texte :</label>
+          <label>Importer du texte depuis un fichier texte :</label>
           <input type="file" id="fileInput" style="display: none" />
           <button id="fileButton">Sélectionner un fichier</button>
         </div>
@@ -48,12 +53,8 @@
           <input type="number" id="keyA" class="hidden" min="1" />
           <label for="keyB" id="keyBLabel" class="hidden">Key B</label>
           <input type="number" id="keyB" class="hidden" min="1" />
-          <button class="crypt" id="crypt" onclick="applyEncryption()">
-            Crypter
-          </button>
-          <button class="decrypt" id="decrypt" onclick="applyDecryption()">
-            Décrypter
-          </button>
+          <button class="crypt" id="crypt" onclick="applyEncryption()" disabled>Crypter</button>
+          <button class="decrypt" id="decrypt" onclick="applyDecryption()" disabled>Décrypter</button>
         </div>
 
         <div class="result">
