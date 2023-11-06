@@ -13,7 +13,7 @@
           <li class="item"><a href="#part2">cryptage</a></li>
           <li class="item"><a href="#part3">Mot de passe</a></li>
           <li class="item"><a href="#part3">Attaques</a></li>
-          <li class="item"><a href="#">Stéganographie </a></li>
+          <li class="item"><a href="#part4">Stéganographie </a></li>
         </ul>
       </nav>
       <h1>Boite d’outils de cryptographie classique et attaques</h1>
@@ -135,6 +135,53 @@
       </div>
     </div>
 
+    <div class="part4" id="part4">
+      <div class="steganography">
+        <div class="titre">
+          <h2>Steganography</h2>
+        </div>
+        <div class="app">
+          <div class="import">
+            <div class="importTxt">
+              <label for="fileInputTxt">Importez un fichier texte :</label>
+              <input type="file" id="fileInputTxt" style="display: none" />
+              <!-- <button type="button" class="fileButton" id="fileButtonTxt">Sélectionner un fichier</button> -->
+              <button class="fileButton" onclick="document.getElementById('fileInputTxt').click();">Sélectionner un fichier</button>
+            </div>
+            <div class="importPic">
+              <label for="fileInputImg">Importez une image :</label>
+              <input type="file" id="fileInputImg" style="display: none" />
+              <!-- <button class="fileButton" id="fileButtonImg">Sélectionner une image </button> -->
+              <button class="fileButton" lass="fileButton" onclick="document.getElementById('fileInputImg').click();">Sélectionner une image </button>
+            </div>
+          </div>
+          <div class="box">
+            <h3>Message a cacher</h3>
+            <textarea id="messagepart4" rows="4" cols="50"></textarea>
+          </div>
+          <div class="entrer-info">
+          <button class="crypt" id="crypt" onclick="cacherLeMessage()">
+            Cacher le message
+          </button>
+          <button class="decrypt" id="decrypt" onclick="AfficherLeMessage()">
+            afficher le message
+          </button>
+        </div>
+
+          <div class="box">
+            <h3>Message  cacher</h3>
+            <textarea id="messagecacher" rows="4" cols="50"></textarea>
+          </div>
+          <div id="outputarea">
+
+          </div>
+          
+          
+        </div>
+      </div>
+
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/part3/dictionnary.js"></script>
     <script src="/js/part3/part3-motdepasse-allchar.js"></script>
@@ -143,6 +190,7 @@
     <script src="/js/part3/bruteforce1.js"></script>
     <script src="/js/part3/dictionnaire.js"></script>
     <script src="/js/part2/cryptography.js"></script>
+    <script src="/js/part4/Steganography.js"></script>
     <script type="module" src="/js/part2/fontEnd.js"></script>
   </body>
 </html>

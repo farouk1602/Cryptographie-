@@ -486,6 +486,265 @@ body .container .home a:hover {
 
 
 
+.part4 {
+  height: 100vh;
+  color: white;
+  background: url(/pics/email-messages-network-circuit-board-link-connection-technology.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.part3 .steganography .titre {
+  color: #4462c6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-transform: capitalize;
+  padding: 1rem;
+}
+
+.part4 .app {
+  display: flex;
+  max-width: 250px;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 2rem;
+  margin-bottom: 6rem;
+  text-transform: capitalize;
+}
+
+.part4 .app select {
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  background-color: #00196b;
+  color: white;
+  border: 3px solid white;
+  -webkit-appearance: none; /* Pour les navigateurs basés sur WebKit (comme Safari) */
+  -moz-appearance: none; /* Pour les navigateurs basés sur Gecko (comme Firefox) */
+  appearance: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: auto;
+  transition: .5s;
+}
+
+.part4 .app select:hover {
+  background-color:  #fddd1d;
+  border: 3px solid #00196b;
+  color: #00196b;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.part4 .steganography .titre h2 {
+  margin-top: 0.3rem;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #fddd1d;
+}
+
+.part4 .app select option {
+  border: none;
+  border-radius: 10px;
+  color: #00196b;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+
+.part4 .app select .titre {
+  background-color: #00196b;
+  color: white;
+}
+
+.part4 .app {
+  padding-bottom: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 30px;
+}
+.part4 .steganography .titre h2 {
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+.part4 .app h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.part4 .app .error {
+  text-align: center;
+  margin-top: 1rem;
+  color: red;
+}
+
+.part4 .app .box {
+  display: flex;
+  flex-direction: column;
+}
+
+.part4 .app .box textarea {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.088);
+  border-radius: 5px;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.46);
+  padding: 1rem;
+  margin: auto;
+  color: white;
+  font-size: 20px;
+  max-width: 500px;
+  transition: 0.5s;
+}
+
+.part4 .app .box textarea:hover {
+  transform: scale(1.02);
+  backdrop-filter: blur(5px);
+}
+
+.part4 .app .entrer-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.part4 .app .entrer-info label {
+  margin-right: 1rem;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.part4 .app .entrer-info input {
+  margin-right: 1rem;
+  max-width: 100px;
+  padding: 10px 1rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  color: white;
+  transition: 0.5s;
+}
+.part4 .app .entrer-info input:hover {
+  border: 2px solid white;
+}
+
+.part4 .app .entrer-info button {
+  background-color: #00196b;
+  margin-right: 1rem;
+  border-radius: 10px;
+  padding: 10px 1rem;
+  font-size: 1.25rem;
+  border: 2px solid white;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.part4 .app .entrer-info button:hover {
+  border: 2px solid #00196b;
+  background-color:  #fddd1d;
+  border-radius: 15px;
+  color: #00196b;
+  cursor: pointer;
+}
+
+.part4 .app .import {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 10px;
+}
+
+.part4 .app .import .fileButton{
+  background-color: #fddd1d;
+  margin-right: 1rem;
+  border-radius: 10px;
+  padding: 10px 1rem;
+  border: 2px solid #00196b;
+  color: #00196b;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+
+
+.part4 .app .import #fileButton:hover {
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.part4 .app .result {
+  display: flex;
+  justify-content: center;
+}
+.part4 .app .result .box {
+  flex-direction: column;
+}
+.part4 .app .result .box h3 {
+  margin: auto;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.part4 .app .download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00196b;
+  margin: 10px;
+}
+
+.part4 .app .download #downloadButton{
+  background-color: #fddd1d;
+  margin-right: 1rem;
+  border-radius: 10px;
+  padding: 10px 1rem;
+  border: 2px solid #00196b;
+  color: #00196b;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+
+
+.part4 .app .download #downloadButton:hover {
+  border-radius: 20px;
+  cursor: pointer;
+}
+.part4 .app .outputarea  {
+ display: flex;
+ align-content: center;
+ margin: 20px;
+ justify-content: center;
+}
+/* .part4 .app .outputarea  #image{
+ justify-content: center;
+ align-items: center;
+} */
+
+
+
+
 
 
 
