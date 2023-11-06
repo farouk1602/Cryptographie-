@@ -29,12 +29,18 @@
           <option value="">Type de cryptage</option>
           <option value="Mirroir">Miroir</option>
           <option value="Affine">Affine</option>
-          <option value="Decalage">Décalage</option>
+          <option value="DecalageDroit">Décalage a droit</option>
+          <option value="DecalageGauche">Décalage a gauche</option>
           <option value="Cesar">César</option>
         </select>
-        <h2 id="cryptingType"></h2>
+        <h5 id="cryptingType"></h5>
+        <h4>Vous ne pouvez utiliser cette application que si vous définissez le mot de passe</h4>
+        <div class="pass">
+          <input type="password" id="passwordinput" placeholder="Enter Password">
+          <button onclick="checkPassword()">Submit</button>
+        </div>
         <div class="import">
-          <label>Importez un fichier texte :</label>
+          <label>Importer du texte depuis un fichier texte :</label>
           <input type="file" id="fileInput" style="display: none" />
           <button id="fileButton">Sélectionner un fichier</button>
         </div>
@@ -48,12 +54,8 @@
           <input type="number" id="keyA" class="hidden" min="1" />
           <label for="keyB" id="keyBLabel" class="hidden">Key B</label>
           <input type="number" id="keyB" class="hidden" min="1" />
-          <button class="crypt" id="crypt" onclick="applyEncryption()">
-            Crypter
-          </button>
-          <button class="decrypt" id="decrypt" onclick="applyDecryption()">
-            Décrypter
-          </button>
+          <button class="crypt" id="crypt" onclick="applyEncryption()" disabled>Crypter</button>
+          <button class="decrypt" id="decrypt" onclick="applyDecryption()" disabled>Décrypter</button>
         </div>
 
         <div class="result">
@@ -109,16 +111,28 @@
 
       <div class="input-password">
         <div class="box">
-          <h3>Entrer le mot de passe</h3>
-          <input
-            type="password"
-            id="passwordInput"
-            placeholder="Mot de passe"
-          />
+          <h3>Entrer le mot de passe 01</h3>
+          <input type="password" id="passwordInput1" placeholder="Mot de passe"/>
           <div class="btn">
-            <button onclick="startBruteForceAttackAll()">
-              Attaque brute force
-            </button>
+            <button onclick="startBruteForceAttack01()">Attaque brute force</button>
+            <button onclick="startDictionnaryAttack01()">Attaque par dictionnaire </button>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Entrer le mot de passe 09</h3>
+          <input type="password" id="passwordInput2" placeholder="Mot de passe"/>
+          <div class="btn">
+            <button onclick="startBruteForceAttack09()">Attaque brute force</button>
+            <button onclick="startDictionnaryAttack09()">Attaque par dictionnaire</button>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Entrer le mot de passe all</h3>
+          <input type="password" id="passwordInput3" placeholder="Mot de passe"/>
+          <div class="btn">
+            <button onclick="startBruteForceAttackAll()">Attaque brute force</button>
             <button onclick="startDictionnaryAttack()">Attaque par dictionnaire</button>
           </div>
         </div>
@@ -127,7 +141,7 @@
       <div class="attack">
         <div class="premier">
           <div class="forcebrute-attack">
-            <h2>Résultat de l'attaque force brute :</h2>
+            <h2>Résultat de l'attaque:</h2>
             <p>Mot de passe : <span id="foundPassword"></span></p>
             <p>Temps : <span id="elapsedTime"></span> s</p>
           </div>
@@ -188,7 +202,8 @@
     <script src="/js/part3/part3-motdepasse[01].js"></script>
     <script src="/js/part3/part3-motdepasse[0..9].js"></script>
     <script src="/js/part3/bruteforce1.js"></script>
-    <script src="/js/part3/dictionnaire.js"></script>
+    <script src="/js/part3/bruteforce2.js"></script>
+    <script src="/js/part3/bruteforce3.js"></script>
     <script src="/js/part2/cryptography.js"></script>
     <script src="/js/part4/Steganography.js"></script>
     <script type="module" src="/js/part2/fontEnd.js"></script>
