@@ -10,9 +10,17 @@ const fs = require('fs');
 const filePath3 = 'public/js/passwords.txt';
 const fileContents3 = fs.readFileSync(filePath3, 'utf-8');
 const linesArray3 = fileContents3.split('\n');
+
+
+
+
 const filePath1 = 'public/js/01.txt';
 const fileContents1 = fs.readFileSync(filePath1, 'utf-8');
 const linesArray1= fileContents1.split('\n');
+
+
+
+
 const filePath2 = 'public/js/09.txt';
 const fileContents2 = fs.readFileSync(filePath2, 'utf-8');
 const linesArray2 = fileContents2.split('\n');
